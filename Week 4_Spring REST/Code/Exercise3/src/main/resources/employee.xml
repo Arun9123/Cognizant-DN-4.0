@@ -1,0 +1,69 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="skill1" class="com.cognizant.model.Skill">
+        <property name="id" value="1"/>
+        <property name="name" value="Java"/>
+    </bean>
+
+    <bean id="skill2" class="com.cognizant.model.Skill">
+        <property name="id" value="2"/>
+        <property name="name" value="Spring"/>
+    </bean>
+
+    <bean id="dept1" class="com.cognizant.model.Department">
+        <property name="id" value="1"/>
+        <property name="name" value="HR"/>
+    </bean>
+
+    <bean id="dept2" class="com.cognizant.model.Department">
+        <property name="id" value="2"/>
+        <property name="name" value="IT"/>
+    </bean>
+
+    <bean id="employee1" class="com.cognizant.model.Employee">
+        <property name="id" value="1"/>
+        <property name="name" value="Indranjana"/>
+        <property name="department"
+                  ref="dept1"/>
+        <property name="skillList">
+            <list>
+                <ref bean="skill1"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="employee2" class="com.cognizant.model.Employee">
+        <property name="id" value="2"/>
+        <property name="name" value="Chatterjee"/>
+        <property name="department"
+                  ref="dept2"/>
+        <property name="skillList">
+            <list>
+                <ref bean="skill1"/>
+                <ref bean="skill2"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="employeeList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="employee1"/>
+                <ref bean="employee2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="departmentList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="dept1"/>
+                <ref bean="dept2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
