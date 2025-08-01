@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content:center;
+  margin-top: 40px;
+}
+
+.st2, .v1{
+  border-left: 4px solid green;
+  margin-left: 20px;
+  padding:20px
+}
+.mystyle1 {
+  margin-left: 20px;
+  padding:20px
+}
